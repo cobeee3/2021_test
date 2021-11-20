@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box1{
+            margin:100px 300px;
+        }
+        input{
+            float:left;
+        }
+        .change{
+            color:red;
+
+        }
+        .normal{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <input type="password"><p></p>
+    </div>
+    <script>
+       var input1 = document.querySelector('input');
+       var p1 = document.querySelector('p');
+       p1.className = 'normal';
+       p1.innerHTML = '请输入正确的长度！'
+       input1.onblur = ()=>{
+        if (input1.value.length<6 || input1.value.length>8){
+            p1.className = 'change';
+            p1.innerHTML = '密码长度不正确！'
+        }else{
+            p1.className = 'normal';
+       p1.innerHTML = '密码长度符合要求 ！'
+        }
+      
+       }
+    </script>
+</body>
+</html>
